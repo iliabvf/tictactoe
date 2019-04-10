@@ -85,6 +85,8 @@ class GameLogic {
         // Creating game field
         Field field = new Field();
 
+		System.out.println("TicTacToe by Budeanu Vasile. v.1.1");
+		
         // main game cycle
         while (true) {
             showField(field);
@@ -137,18 +139,6 @@ class GameLogic {
                 showField(field);
                 break;
             }
-            if (checkWinner(field, 'O')){
-                System.out.println("AI wins!");
-                showField(field);
-                break;
-            }
-
-            // Check game end
-            if (checkFieldFull(field)){
-                System.out.println("Game ended, nobody wins.");
-                showField(field);
-                break;
-            }
 
             // AI turn
             char[][] fieldData = field.getFieldData();
@@ -162,6 +152,20 @@ class GameLogic {
                 System.out.println("AI turn ...");
                 break;
             }
+			
+            if (checkWinner(field, 'O')){
+                System.out.println("AI wins!");
+                showField(field);
+                break;
+            }
+			
+            // Check game end
+            if (checkFieldFull(field)){
+                System.out.println("Game ended, nobody wins.");
+                showField(field);
+                break;
+            }
+
 
         }
     }
