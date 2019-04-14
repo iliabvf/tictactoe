@@ -6,75 +6,100 @@ import java.util.Scanner;
 // содержит бизнес-логику игры
 class GameLogic {
 
-    void showField(Field field){
-        char[][] fieldData = field.getFieldData();
+    final String WELCOME_STRING =  "TicTacToe by Budeanu Vasile. v.1.2";
+    final String INPUT_STRING =  "Enter cell number (1 - 9) or Q for quit: ";
+    final String CLOSING_STRING =  "Closing game...";
+    final String ERROR_NUM_DIGITS_STRING =  "Error: Please enter ONE digit (ex.1).";
+    final String ERROR_CELL_RANGE_STRING =  "Error: Please enter cell value from 0 to 9.";
+    final String ERROR_CELL_RANGE2_STRING =  "Error: Please enter cell value from 1 to 9.";
+    final String ERROR_CELL_OCCUPIED_STRING =  "Cell occupied!";
+    final String WIN_STRING =  "You win!";
+    final String AI_TURN_STRING =  "AI turn ...";
+    final String AI_WIN_STRING = "AI wins!";
+    final String NOBODY_WINS_STRING =  "Game ended, nobody wins.";
+
+    private Field field;
+    private Scanner scanner;
+
+    GameLogic(){
+        this.field = new Field();
+        this.scanner = new Scanner(System.in);
+    }
+
+    void showField(){
+        char[] fieldData = this.field.getFieldData();
         System.out.println();
-        System.out.println("     0  1  2 ");
-        for (int r = 0; r < 3; r++){
-            System.out.print(" " + r + ": ");
-            for (int c = 0; c < 3; c++){
-                System.out.print("[" + fieldData[r][c] + "]");
+        for (int cell = 0; cell < 9; cell++){
+            if (cell % 3 == 0) {
+                System.out.println();
             }
-            System.out.println();
+            System.out.print("[" + (fieldData[cell]) + "]");
+
+
         }
     }
 
-    String UserInput(String message){
+    String userInput(String message){
         System.out.println();
         System.out.print(message);
         try {
-            Scanner inputReader = new Scanner(System.in);
-            return inputReader.nextLine();
+            return this.scanner.nextLine();
         } catch (Exception e)
         {
             return "";
         }
     }
 
-    boolean checkWinner(Field field, char value){
-        char[][] filedData = field.getFieldData();
+    boolean checkWinner(char value){
+        char[] filedData = this.field.getFieldData();
 
         boolean win;
 
-        for (int i = 0; i < 2; i++) {
-            for (int r = 0; r < 3; r++) {
-                win = true;
-                for (int c = 0; c < 3; c++) {
-                    if (i == 0)
-                        win = filedData[r][c] == value ? win : false;
-                    else
-                        win = filedData[c][r] == value ? win : false;
-                }
-                if (win)
-                    return true;
+        for (int row = 0; row < 3; row++) {
+            win = true;
+            for (int column = 0; column < 3; column++) {
+                win = filedData[row*3 + column] == value ? win : false;
+            }
+            if (win) {
+                return true;
+            }
+        }
+
+        for (int column = 0; column < 3; column++) {
+            win = true;
+            for (int row = 0; row < 7; row=row+3) {
+                win = filedData[row + column] == value ? win : false;
+            }
+            if (win) {
+                return true;
             }
         }
 
         win = true;
-        for (int r = 0; r < 3; r++) {
-            win = filedData[r][r] == value ? win : false;
+        for (int cell = 1; cell < 10; cell=cell+4) {
+            win = filedData[cell-1] == value ? win : false;
         }
-        if (win)
+        if (win) {
             return true;
+        }
 
         win = true;
-        for (int r = 0; r < 3; r++) {
-            win = filedData[r][2-r] == value ? win : false;
+        for (int cell = 3; cell < 8; cell=cell+2) {
+            win = filedData[cell-1] == value ? win : false;
         }
-        if (win)
+        if (win) {
             return true;
-
+        }
 
         return false;
     }
 
-    boolean checkFieldFull(Field field){
-        char[][] filedData = field.getFieldData();
+    boolean checkFieldFull(){
+        char[] filedData = this.field.getFieldData();
 
-        for (int c = 0; c < 3; c++) {
-            for (int r = 0; r < 3; r++) {
-                if (filedData[r][c] == ' ')
-                    return false;
+        for (int cell = 0; cell < 9; cell++) {
+            if (filedData[cell] != 'X' && filedData[cell] != 'O') {
+                return false;
             }
         }
 
@@ -82,87 +107,81 @@ class GameLogic {
     }
 
     void startGame(){
-        // Creating game field
-        Field field = new Field();
-
-		System.out.println("TicTacToe by Budeanu Vasile. v.1.1");
+		System.out.println(WELCOME_STRING);
 		
         // main game cycle
         while (true) {
-            showField(field);
+            showField();
 
             String input = "";
-            int row;
-            int col;
+            int cell;
             while (true) {
-                input = UserInput("Enter Row and Column number (ex.11) or Q for quit: ");
+                input = userInput(INPUT_STRING);
                 if (input.toUpperCase().equals("Q")){
                     System.out.println();
-                    System.out.println("Closing game...");
+                    System.out.println(CLOSING_STRING);
                     return;
                 }
 
-                if (input.length() != 2) {
-                    System.out.println("Error: Please enter TWO digits (ex.11).");
+                if (input.length() != 1) {
+                    System.out.println(ERROR_NUM_DIGITS_STRING);
                     continue;
                 }
 
-                if (input.charAt(0) < 48 || input.charAt(0) > 50 || input.charAt(1) < 48 || input.charAt(1) > 50){
-                    System.out.println("Error: Please enter row/col value from 0 to 2.");
+                if (input.charAt(0) < 49 || input.charAt(0) > 57){
+                    System.out.println(ERROR_CELL_RANGE_STRING);
                     continue;
                 }
 
-                row = Character.getNumericValue(input.charAt(0));
-                col = Character.getNumericValue(input.charAt(1));
+                cell = Character.getNumericValue(input.charAt(0));
 
-                if (row <0 || row > 2 || col <0 || col > 2){
-                    System.out.println("Error: Please enter row/col value from 0 to 2.");
+                if (cell <1 || cell > 9){
+                    System.out.println(ERROR_CELL_RANGE2_STRING);
                     continue;
                 }
 
                 break;
-
             }
 
 
 
-            if (field.getFieldCell(row, col) != ' '){
-                System.out.println("Cell " + row + " " + col + " si occupied");
+            if (this.field.getFieldCell(cell-1) == 'X' || this.field.getFieldCell(cell-1) == 'O'){
+                System.out.println(ERROR_CELL_OCCUPIED_STRING);
                 continue;
             }
 
-            field.setFieldCell(row, col, 'X');
+            this.field.setFieldCell(cell-1, 'X');
 
             // Check winner
-            if (checkWinner(field, 'X')){
-                System.out.println("You win!");
-                showField(field);
+            if (checkWinner('X')){
+                System.out.println(WIN_STRING);
+                showField();
                 break;
             }
 
             // AI turn
-            char[][] fieldData = field.getFieldData();
+            char[] fieldData = this.field.getFieldData();
             Random rand = new Random();
             while (true) {
-                int r = rand.nextInt(3);
-                int c = rand.nextInt(3);
-                if (fieldData[r][c] != ' ')
+                int randomCell = rand.nextInt(8);
+                if (fieldData[randomCell] == 'X' || fieldData[randomCell] == 'O') {
                     continue;
-                fieldData[r][c] = 'O';
-                System.out.println("AI turn ...");
+                }
+                fieldData[randomCell] = 'O';
+                System.out.println(AI_TURN_STRING);
                 break;
             }
 			
-            if (checkWinner(field, 'O')){
-                System.out.println("AI wins!");
-                showField(field);
+            if (checkWinner('O')){
+                System.out.println(AI_WIN_STRING);
+                showField();
                 break;
             }
 			
             // Check game end
-            if (checkFieldFull(field)){
-                System.out.println("Game ended, nobody wins.");
-                showField(field);
+            if (checkFieldFull()){
+                System.out.println(NOBODY_WINS_STRING);
+                showField();
                 break;
             }
 

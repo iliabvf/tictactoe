@@ -2,32 +2,30 @@ package net.iliabvf.tictactoe;
 
 // сущность, описывающая игровое поле
 class Field {
-    private char[][] fieldData;
+    private char[] fieldData;
 
     Field() {
-        char[][] fieldData = new char[3][3];
-        for (int r = 0; r < 3; r++){
-            for (int c = 0; c < 3; c++){
-                fieldData[r][c] = ' ';
-            }
+        char[] fieldData = new char[9];
+        for (int cell = 0; cell < 9; cell++){
+            fieldData[cell] = (char)(49+cell);
         }
 
         this.fieldData = fieldData;
     }
 
-    public char[][] getFieldData() {
+    public char[] getFieldData() {
         return fieldData;
     }
 
-    public void setFieldData(char[][] fieldData) {
+    public void setFieldData(char[] fieldData) {
         this.fieldData = fieldData;
     }
 
-    public void setFieldCell(int row, int col, char value) {
-        this.fieldData[row][col] = value;
+    public void setFieldCell(int cell, char value) {
+        this.fieldData[cell] = value;
     }
 
-    public char getFieldCell(int row, int col) {
-        return this.fieldData[row][col];
+    public char getFieldCell(int cell) {
+        return this.fieldData[cell];
     }
 }
