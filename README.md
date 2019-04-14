@@ -1,2 +1,4 @@
 # tictactoe
-Execute file start.cmd or "java TicTacToe.GameRunner"
+1. git clone
+2. Open in IDEA
+3. Run class GameRunner
