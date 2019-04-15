@@ -106,6 +106,45 @@ class GameLogic {
         return true;
     }
 
+    byte validateImput(String input){
+        if (input.toUpperCase().equals("Q")){
+            System.out.println();
+            System.out.println(CLOSING_STRING);
+            return 2;
+        }
+
+        if (input.length() != 1) {
+            System.out.println(ERROR_NUM_DIGITS_STRING);
+            return 0;
+        }
+
+        if (input.charAt(0) < 49 || input.charAt(0) > 57){
+            System.out.println(ERROR_CELL_RANGE_STRING);
+            return 0;
+        }
+
+        if (Character.getNumericValue(input.charAt(0)) <1 || Character.getNumericValue(input.charAt(0)) > 9){
+            System.out.println(ERROR_CELL_RANGE2_STRING);
+            return 0;
+        }
+
+        return 1;
+    }
+
+    void aiTurn(){
+        char[] fieldData = this.field.getFieldData();
+        Random rand = new Random();
+        while (true) {
+            int randomCell = rand.nextInt(8);
+            if (fieldData[randomCell] == 'X' || fieldData[randomCell] == 'O') {
+                continue;
+            }
+            fieldData[randomCell] = 'O';
+            System.out.println(AI_TURN_STRING);
+            return;
+        }
+    }
+
     void startGame(){
 		System.out.println(WELCOME_STRING);
 		
@@ -117,28 +156,13 @@ class GameLogic {
             int cell;
             while (true) {
                 input = userInput(INPUT_STRING);
-                if (input.toUpperCase().equals("Q")){
-                    System.out.println();
-                    System.out.println(CLOSING_STRING);
+                if (validateImput(input) == 0) {
+                    continue;
+                } else if (validateImput(input) == 2) {
                     return;
                 }
 
-                if (input.length() != 1) {
-                    System.out.println(ERROR_NUM_DIGITS_STRING);
-                    continue;
-                }
-
-                if (input.charAt(0) < 49 || input.charAt(0) > 57){
-                    System.out.println(ERROR_CELL_RANGE_STRING);
-                    continue;
-                }
-
                 cell = Character.getNumericValue(input.charAt(0));
-
-                if (cell <1 || cell > 9){
-                    System.out.println(ERROR_CELL_RANGE2_STRING);
-                    continue;
-                }
 
                 break;
             }
@@ -160,18 +184,8 @@ class GameLogic {
             }
 
             // AI turn
-            char[] fieldData = this.field.getFieldData();
-            Random rand = new Random();
-            while (true) {
-                int randomCell = rand.nextInt(8);
-                if (fieldData[randomCell] == 'X' || fieldData[randomCell] == 'O') {
-                    continue;
-                }
-                fieldData[randomCell] = 'O';
-                System.out.println(AI_TURN_STRING);
-                break;
-            }
-			
+            aiTurn();
+
             if (checkWinner('O')){
                 System.out.println(AI_WIN_STRING);
                 showField();

@@ -7,8 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bdf60f58-f27a-4878-a81a-640620c71e59" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../start.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/net/iliabvf/tictactoe/GameLogic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/net/iliabvf/tictactoe/GameLogic.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,8 +21,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/net/iliabvf/tictactoe/GameLogic.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="166" column="24" lean-forward="true" selection-start-line="166" selection-start-column="24" selection-end-line="166" selection-end-column="24" />
+            <state relative-caret-position="220">
+              <caret line="149" column="8" lean-forward="true" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -74,6 +73,22 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="TicTacToe" type="58d84e3e:PackageViewProjectNode" />
+              <item name="TicTacToe" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="TicTacToe" type="58d84e3e:PackageViewProjectNode" />
+              <item name="TicTacToe" type="616d4139:PackageViewModuleNode" />
+              <item name="net.iliabvf.tictactoe" type="1f31426a:PackageElementNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -103,22 +118,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="TicTacToe" type="58d84e3e:PackageViewProjectNode" />
-              <item name="TicTacToe" type="616d4139:PackageViewModuleNode" />
-            </path>
-            <path>
-              <item name="TicTacToe" type="58d84e3e:PackageViewProjectNode" />
-              <item name="TicTacToe" type="616d4139:PackageViewModuleNode" />
-              <item name="net.iliabvf.tictactoe" type="1f31426a:PackageElementNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -169,6 +168,7 @@
       <option name="presentableId" value="Default" />
       <updated>1555006203593</updated>
       <workItem from="1555006207111" duration="16069000" />
+      <workItem from="1555276560153" duration="2876000" />
     </task>
     <task id="LOCAL-00001" summary="v2">
       <created>1555051352616</created>
@@ -195,24 +195,19 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16069000" />
+    <option name="totallyTimeSpent" value="18945000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1156" height="907" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Image Layers" />
-      <window_info id="Designer" />
-      <window_info id="UI Designer" />
-      <window_info id="Capture Tool" />
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49866667" visible="true" weight="0.25" />
-      <window_info id="Structure" order="1" sideWeight="0.50133336" side_tool="true" visible="true" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" weight="0.32988358" />
-      <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49733335" visible="true" weight="0.25456205" />
+      <window_info id="Structure" order="1" sideWeight="0.50266665" side_tool="true" visible="true" weight="0.25456205" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32933334" />
@@ -220,15 +215,20 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Palette" />
-      <window_info anchor="right" id="Theme Preview" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Palette&#9;" />
-      <window_info anchor="right" id="Database" />
-      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.32988358" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Palette&#9;" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -291,8 +291,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/net/iliabvf/tictactoe/GameLogic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="166" column="24" lean-forward="true" selection-start-line="166" selection-start-column="24" selection-end-line="166" selection-end-column="24" />
+        <state relative-caret-position="220">
+          <caret line="149" column="8" lean-forward="true" selection-start-line="149" selection-start-column="8" selection-end-line="149" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
