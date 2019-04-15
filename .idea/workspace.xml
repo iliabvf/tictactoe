@@ -7,11 +7,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bdf60f58-f27a-4878-a81a-640620c71e59" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/TicTacToe.iml" beforeDir="false" afterPath="$PROJECT_DIR$/TicTacToe.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/iliabvf/tictactoe/Field.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/iliabvf/tictactoe/GameLogic.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/net/iliabvf/tictactoe/GameRunner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/TicTacToe_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/description.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/project-template.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/TicTacToe_jar/TicTacToe.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TicTacToe/META-INF/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TicTacToe/net/iliabvf/tictactoe/Field.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TicTacToe/net/iliabvf/tictactoe/GameLogic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/TicTacToe/net/iliabvf/tictactoe/GameRunner.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,7 +36,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/net/iliabvf/tictactoe/Field.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding>
                 <element signature="e#349#350#0" expanded="true" />
                 <element signature="e#381#382#0" expanded="true" />
@@ -67,7 +77,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="1">
+  <component name="ProjectFrameBounds">
     <option name="x" value="-7" />
     <option name="width" value="1156" />
     <option name="height" value="907" />
@@ -137,7 +147,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555349723020" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555349724270" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
@@ -189,7 +199,7 @@
       <updated>1555006203593</updated>
       <workItem from="1555006207111" duration="16069000" />
       <workItem from="1555276560153" duration="2876000" />
-      <workItem from="1555348828633" duration="894000" />
+      <workItem from="1555348828633" duration="954000" />
     </task>
     <task id="LOCAL-00001" summary="v2">
       <created>1555051352616</created>
@@ -216,7 +226,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19839000" />
+    <option name="totallyTimeSpent" value="19899000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1156" height="907" extended-state="0" />
@@ -313,7 +323,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/net/iliabvf/tictactoe/Field.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="13" lean-forward="true" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
           <folding>
             <element signature="e#349#350#0" expanded="true" />
             <element signature="e#381#382#0" expanded="true" />
